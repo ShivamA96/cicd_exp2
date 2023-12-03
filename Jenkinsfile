@@ -10,22 +10,16 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'javac HelloWorld.java'
+                sh 'mvn clean package' // Execute Maven to clean and package the application
             }
         }
         
         stage('Test') {
             steps {
-                sh 'echo "No tests for HelloWorld"'
+                sh 'mvn test' // Execute Maven to run tests
             }
         }
         
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying HelloWorld"'
-                // Add deployment steps here
-            }
-        }
     }
     
     post {
