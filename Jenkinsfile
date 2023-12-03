@@ -10,16 +10,15 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean package' // Execute Maven to clean and package the application
+                bat 'mvn clean package' // Execute Maven to clean and package the application using Windows command
             }
         }
         
         stage('Test') {
             steps {
-                sh 'mvn test' // Execute Maven to run tests
+                bat 'mvn test' // Execute Maven to run tests using Windows command
             }
         }
-        
     }
     
     post {
